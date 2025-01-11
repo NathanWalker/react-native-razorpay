@@ -25,7 +25,7 @@ RCT_EXPORT_MODULE()
 RCT_EXPORT_METHOD(open : (NSDictionary *)options) {
 
     NSString *keyID = (NSString *)[options objectForKey:@"key"];
-    dispatch_sync(dispatch_get_main_queue(), ^{
+    //dispatch_sync(dispatch_get_main_queue(), ^{
         Razorpay *razorpay = [Razorpay initWithKey:keyID
                                andDelegateWithData:self];
         [razorpay setExternalWalletSelectionDelegate:self];
@@ -45,7 +45,7 @@ RCT_EXPORT_METHOD(open : (NSDictionary *)options) {
 
         //Use 'open' method with displayController parameter
         [razorpay open:tempOptions displayController:rootViewController];
-    });
+    //});
 }
 
 /*
